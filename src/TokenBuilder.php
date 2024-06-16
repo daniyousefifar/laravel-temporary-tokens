@@ -17,7 +17,7 @@ class TokenBuilder
 
     protected ?Carbon $expiresAt = null;
 
-    protected Model $tokenable;
+    protected ?Model $tokenable = null;
 
     protected int $usageLimit = 1;
 
@@ -117,7 +117,7 @@ class TokenBuilder
     /**
      * Retrieve expiration date.
      *
-     * @return Carbon
+     * @return Carbon|null
      */
     public function getExpireDate(): ?Carbon
     {
@@ -165,9 +165,9 @@ class TokenBuilder
     /**
      * Retrieve related Eloquent model instance.
      *
-     * @return Model
+     * @return Model|null
      */
-    public function getTokenable(): Model
+    public function getTokenable(): ?Model
     {
         return $this->tokenable;
     }
@@ -220,7 +220,7 @@ class TokenBuilder
             'expires_at' => $this->getExpireDate(),
         ];
 
-        if ($this->getTokenable()) {
+        if ($this->getTokenable() instanceof Model) {
             $token = $this->getTokenable()->temporaryTokens()->create($payload);
         } else {
             $token = TemporaryToken::create($payload);
