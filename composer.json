@@ -1,0 +1,26 @@
+{
+    "name": "zirsakht/laravel-temporary-tokens",
+    "description": "A Laravel package to generate temporary tokens/pins.",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2|^8.3",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zirsakht\\TemporaryTokens\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zirsakht\\TemporaryTokens\\TemporaryTokensServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
