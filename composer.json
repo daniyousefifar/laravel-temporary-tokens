@@ -1,0 +1,44 @@
+{
+    "name": "mydaniel/laravel-temporary-tokens",
+    "description": "A flexible Laravel package to generate, manage, and validate temporary tokens, OTPs, or pins.",
+    "keywords": [
+        "laravel",
+        "token",
+        "temporary",
+        "otp",
+        "pin",
+        "security"
+    ],
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Yousefi Far",
+            "email": "daniyousefifar@gmail.com",
+            "homepage": "https://github.com/daniyousefifar"
+        }
+    ],
+    "require": {
+        "php": "^8.2|^8.3|^8.4",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyDaniel\\TemporaryTokens\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MyDaniel\\TemporaryTokens\\TemporaryTokensServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
